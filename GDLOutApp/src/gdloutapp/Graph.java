@@ -98,16 +98,18 @@ class Graph<T>
         g.addEdge(6, 4);
         g.addEdge(6, 2);
         g.addEdge(7, 2);
-        g.addEdge(7,4);
+       // g.addEdge(7,4);
+        g.addEdge(7, 3);
 
         System.out.println("Following is Breadth First Traversal "+
                            "(starting from vertex 2)");
  
         g.BFS(1);
-        System.out.println("\n");
         g.BFS(6);
-        System.out.println("\n");
         g.BFS(7);
+        
+        FrequencyTable ft = new FrequencyTable();
+        ft.getResults();
     }	
 }
 // This code is contributed by Aakash Hasija
