@@ -5,9 +5,6 @@
  */
 package gdloutapp;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -24,6 +21,11 @@ public class GDLOutApp extends Application {
     
     @Override
     public void start(Stage primaryStage) {
+        
+        Scene scene_municipio, scene_categoria, scene_recomendacion;
+        Stage thestage;
+        thestage=primaryStage;
+        
         Image image = new Image("fondo.jpg");
         //Fondo
         Image image_edificio_shader = new Image("fondo.jpg");
@@ -85,34 +87,11 @@ public class GDLOutApp extends Application {
         iv_image_boton_fondo4.setTranslateX(300);
         iv_image_cat_sss.setTranslateX(300);
 
-        
-        //Mouse Listeners
-        iv_image_boton_fondo.setOnMouseClicked((MouseEvent e) -> {
-            System.out.println("Clicked!"); // change functionality
-        });
-        iv_image_boton_fondo2.setOnMouseClicked((MouseEvent e) -> {
-            System.out.println("Clicked!"); // change functionality
-        });
-        iv_image_boton_fondo3.setOnMouseClicked((MouseEvent e) -> {
-            System.out.println("Clicked!"); // change functionality
-        });
-        iv_image_boton_fondo4.setOnMouseClicked((MouseEvent e) -> {
-            System.out.println("Clicked!"); // change functionality
-        });
-        iv_image_cat_gratis.setOnMouseClicked((MouseEvent e) -> {
-            System.out.println("Clicked!"); // change functionality
-        });
-        iv_image_cat_s.setOnMouseClicked((MouseEvent e) -> {
-            System.out.println("Clicked!"); // change functionality
-        });
-        iv_image_cat_ss.setOnMouseClicked((MouseEvent e) -> {
-            System.out.println("Clicked!"); // change functionality
-        });
-        iv_image_cat_sss.setOnMouseClicked((MouseEvent e) -> {
-            System.out.println("Clicked!"); // change functionality
-        });
         StackPane root = new StackPane();
-
+        StackPane root_municipio = new StackPane();
+        StackPane root_categoria = new StackPane();
+        StackPane root_recomendacion = new StackPane();
+        
         root.getChildren().add(iv);
         root.getChildren().add(iv_image_edificio_shader);
         root.getChildren().add(iv_image_logo);
@@ -126,12 +105,50 @@ public class GDLOutApp extends Application {
         root.getChildren().add(iv_image_cat_s);
         root.getChildren().add(iv_image_cat_ss);
         root.getChildren().add(iv_image_cat_sss);
-
+        
+        root_municipio.getChildren().add(iv);
 
         Scene scene = new Scene(root, 1200, 750);
-        //scene.getStylesheets().add("src/style.css");
-       
-        primaryStage.setTitle("Hello World!");
+        scene_municipio = new Scene(root_municipio,1200,750);
+        scene_categoria = new Scene(root_categoria,1200,750);
+        scene_recomendacion = new Scene(root_recomendacion,1200,750);
+        
+        
+        //Mouse Listeners Scene Precio
+        iv_image_boton_fondo.setOnMouseClicked((MouseEvent e) -> {
+            System.out.println("Clicked! 1"); // change functionality
+            thestage.setScene(scene_municipio);
+        });
+        iv_image_boton_fondo2.setOnMouseClicked((MouseEvent e) -> {
+            System.out.println("Clicked! 2"); // change functionality
+            thestage.setScene(scene_municipio);
+        });
+        iv_image_boton_fondo3.setOnMouseClicked((MouseEvent e) -> {
+            System.out.println("Clicked! 3"); // change functionality
+            thestage.setScene(scene_municipio);
+        });
+        iv_image_boton_fondo4.setOnMouseClicked((MouseEvent e) -> {
+            System.out.println("Clicked! 4"); // change functionality
+            thestage.setScene(scene_municipio);
+        });
+        iv_image_cat_gratis.setOnMouseClicked((MouseEvent e) -> {
+            System.out.println("Clicked! 1"); // change functionality
+            thestage.setScene(scene_municipio);
+        });
+        iv_image_cat_s.setOnMouseClicked((MouseEvent e) -> {
+            System.out.println("Clicked! 2"); // change functionality
+            thestage.setScene(scene_municipio);
+        });
+        iv_image_cat_ss.setOnMouseClicked((MouseEvent e) -> {
+            System.out.println("Clicked! 3"); // change functionality
+            thestage.setScene(scene_municipio);
+        });
+        iv_image_cat_sss.setOnMouseClicked((MouseEvent e) -> {
+            System.out.println("Clicked! 4"); // change functionality
+            thestage.setScene(scene_municipio);
+        });
+        
+        primaryStage.setTitle("GDL Out");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -141,6 +158,7 @@ public class GDLOutApp extends Application {
      */
     public static void main(String[] args) {
         //Aqui podemos meter el input 
+        
         launch(args);
     }
 }
