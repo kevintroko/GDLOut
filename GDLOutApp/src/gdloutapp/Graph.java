@@ -50,7 +50,7 @@ class Graph<T>
         {
             // Dequeue a vertex from queue and print it
             s = queue.poll();
-            System.out.print(s+" ");
+            //System.out.print(s+" ");
             String str = String.valueOf(s);
             this.toTextFile(str);
             
@@ -89,9 +89,77 @@ class Graph<T>
     	       }
     // Driver method to
     public static void main(String args[])
-    {
-        Graph g = new Graph(9);
- 
+    {	
+    	//crear grafo
+        Graph g = new Graph(164);
+    	//define initial nodes
+    	int city = 0;
+    	int price = 6;
+    	int category = 9;
+    	
+    	//add nodes and connect them
+    	File database = new File("database.txt");
+        System.out.println("databasereaded");
+    	try {
+			Scanner a= new Scanner(database);
+			while (a.hasNext()){
+				int place = a.nextInt();
+				int counter = 0;
+				for (int i=0; i<3;i++){
+					g.addEdge(a.nextInt(), place);
+					counter++;
+					//System.out.println(counter);
+				}
+			}
+			a.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+    	//BFS
+    	g.BFS(0);
+    	g.BFS(6);
+    	g.BFS(9);
+    	
+    	//getresults
+    	FrequencyTable ft = new FrequencyTable();
+        ft.getResults(); 
+        
+        //save places in list
+        File placesid = new File("placesid.txt");
+        File placesname = new File("placesname.txt");
+        LinkedList list = new LinkedList(); 
+        
+    	try {
+			Scanner a= new Scanner(placesid);
+			Scanner b = new Scanner(placesname);
+			while (b.hasNextLine()){
+				//System.out.println(b.nextLine());
+				Lugar actualplace = new Lugar(b.nextLine(), category, price, city);	
+				list.add(actualplace);
+			}
+			a.close();
+		//	System.out.println(list.toString());
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} 
+    	
+    	//read results from list
+    	File results2 = new File("results.txt");
+    	try{
+    		Scanner rstr = new Scanner(results2);
+    		while(rstr.hasNextInt()){
+    			//System.out.println(rstr.nextInt()-3);
+    			
+    			System.out.println(list.get(rstr.nextInt()-14));
+    		}
+    	}catch(FileNotFoundException e) {
+			e.printStackTrace();
+		} 
+    	
+    	
+      
+        /* 
         g.addEdge(1, 3);
         g.addEdge(1, 4);
         g.addEdge(1, 2);
@@ -100,16 +168,17 @@ class Graph<T>
         g.addEdge(6, 4);
         g.addEdge(6, 2);
         g.addEdge(7, 2);
-        g.addEdge(7,4);
+       // g.addEdge(7,4);
+        g.addEdge(7, 3);
 
         System.out.println("Following is Breadth First Traversal "+
                            "(starting from vertex 2)");
  
         g.BFS(1);
-        System.out.println("\n");
         g.BFS(6);
-        System.out.println("\n");
         g.BFS(7);
+        
+        FrequencyTable ft = new FrequencyTable();
+        ft.getResults(); */
     }	
 }
-// This code is contributed by Aakash Hasija
