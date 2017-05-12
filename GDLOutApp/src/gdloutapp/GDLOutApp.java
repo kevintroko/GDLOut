@@ -11,6 +11,8 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 /**
@@ -21,6 +23,9 @@ public class GDLOutApp extends Application {
     
     @Override
     public void start(Stage primaryStage) {
+        Image image = new Image("fondo.jpg");
+        ImageView ivFondo = new ImageView(image);
+        
         Button btn = new Button();
         btn.setText("Say 'Hello World'");
         btn.setOnAction(new EventHandler<ActionEvent>() {
@@ -35,7 +40,7 @@ public class GDLOutApp extends Application {
         root.getChildren().add(btn);
         
         Scene scene = new Scene(root, 300, 250);
-        
+       
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
         primaryStage.show();
