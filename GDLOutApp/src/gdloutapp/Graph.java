@@ -1,4 +1,6 @@
-// Java program to print BFS traversal from a given source vertex.
+package gdloutapp;
+
+ // Java program to print BFS traversal from a given source vertex.
 // BFS(int s) traverses vertices reachable from s.
 import java.io.*;
 import java.util.*;
@@ -79,8 +81,8 @@ class Graph<T>
     	PrintWriter wr = new PrintWriter(bw);	
     	
     	wr.append(text + " "); //concatenamos en el archivo sin borrar lo existente
-    	              //ahora cerramos los flujos de canales de datos, al cerrarlos el archivo quedará guardado con información escrita
-    	              //de no hacerlo no se escribirá nada en el archivo
+    	              //ahora cerramos los flujos de canales de datos, al cerrarlos el archivo quedara guardado con informacion escrita
+    	              //de no hacerlo no se escribira nada en el archivo
     	wr.close();
     	bw.close();
     	}catch(IOException e){};
