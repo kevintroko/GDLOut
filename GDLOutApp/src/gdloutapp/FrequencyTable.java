@@ -61,6 +61,7 @@ public class FrequencyTable {
         	wr.append(b.get(i) + " ");         	              
         	wr.close();
         	bw.close();
+        	//System.out.println("hello there");
         	}catch(IOException e){};
         	try{
         		outputbfs.delete();
