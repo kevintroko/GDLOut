@@ -1,3 +1,5 @@
+package gdloutapp;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -61,8 +63,8 @@ public class FrequencyTable {
         	PrintWriter wr = new PrintWriter(bw);	
         	for(int i=0; i<b.size(); i++)
         	wr.append(b.get(i) + " "); //concatenamos en el archivo sin borrar lo existente
-        	              //ahora cerramos los flujos de canales de datos, al cerrarlos el archivo quedará guardado con información escrita
-        	              //de no hacerlo no se escribirá nada en el archivo
+        	              //ahora cerramos los flujos de canales de datos, al cerrarlos el archivo quedara guardado con informacion escrita
+        	              //de no hacerlo no se escribira nada en el archivo
         	wr.close();
         	bw.close();
         	}catch(IOException e){};
