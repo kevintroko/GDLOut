@@ -33,35 +33,58 @@ public class GDLOutApp extends Application {
         Image image_texto_precio = new Image("texto_precio.png");
         //Botones
         Image image_boton_fondo = new Image("boton_fondo.png");
+        Image image_cat_gratis = new Image("cat_gratis.png");
+        Image image_cat_s = new Image("cat_s.png");
+        Image image_cat_ss = new Image("cat_ss.png");
+        Image image_cat_sss = new Image("cat_sss.png");
         
         //Image views
         ImageView iv = new ImageView(image);
+        
         //Fondo
         ImageView iv_image_edificio_shader = new ImageView(image_edificio_shader);
         ImageView iv_image_logo = new ImageView(image_logo);
         iv_image_logo.setTranslateX(-350);
         iv_image_logo.setTranslateY(-250);
+        
         //Textos
         ImageView iv_image_texto_fondo = new ImageView(image_texto_fondo);
         iv_image_texto_fondo.setTranslateY(-90);
         ImageView iv_image_texto_precio = new ImageView(image_texto_precio);
         iv_image_texto_precio.setTranslateY(-90);
+        
         //Boton 1
         ImageView iv_image_boton_fondo = new ImageView(image_boton_fondo);
+        ImageView iv_image_cat_gratis = new ImageView(image_cat_gratis);
         iv_image_boton_fondo.setTranslateY(60);
+        iv_image_cat_gratis.setTranslateY(60);
         iv_image_boton_fondo.setTranslateX(-300);
+        iv_image_cat_gratis.setTranslateX(-300);
+        
         //Boton 2
         ImageView iv_image_boton_fondo2 = new ImageView(image_boton_fondo);
+        ImageView iv_image_cat_s = new ImageView(image_cat_s);
         iv_image_boton_fondo2.setTranslateY(60);
+        iv_image_cat_s.setTranslateY(60);
         iv_image_boton_fondo2.setTranslateX(-100);
+        iv_image_cat_s.setTranslateX(-100);
+        
         //Boton 3
         ImageView iv_image_boton_fondo3 = new ImageView(image_boton_fondo);
+        ImageView iv_image_cat_ss = new ImageView(image_cat_ss);
         iv_image_boton_fondo3.setTranslateY(60);
+        iv_image_cat_ss.setTranslateY(60);
         iv_image_boton_fondo3.setTranslateX(100);
+        iv_image_cat_ss.setTranslateX(100);
+        
         //Boton 4
         ImageView iv_image_boton_fondo4 = new ImageView(image_boton_fondo);
+        ImageView iv_image_cat_sss = new ImageView(image_cat_sss);
         iv_image_boton_fondo4.setTranslateY(60);
+        iv_image_cat_sss.setTranslateY(60);
         iv_image_boton_fondo4.setTranslateX(300);
+        iv_image_cat_sss.setTranslateX(300);
+
         
         //Mouse Listeners
         iv_image_boton_fondo.setOnMouseClicked((MouseEvent e) -> {
@@ -76,7 +99,18 @@ public class GDLOutApp extends Application {
         iv_image_boton_fondo4.setOnMouseClicked((MouseEvent e) -> {
             System.out.println("Clicked!"); // change functionality
         });
-       
+        iv_image_cat_gratis.setOnMouseClicked((MouseEvent e) -> {
+            System.out.println("Clicked!"); // change functionality
+        });
+        iv_image_cat_s.setOnMouseClicked((MouseEvent e) -> {
+            System.out.println("Clicked!"); // change functionality
+        });
+        iv_image_cat_ss.setOnMouseClicked((MouseEvent e) -> {
+            System.out.println("Clicked!"); // change functionality
+        });
+        iv_image_cat_sss.setOnMouseClicked((MouseEvent e) -> {
+            System.out.println("Clicked!"); // change functionality
+        });
         StackPane root = new StackPane();
 
         root.getChildren().add(iv);
@@ -88,7 +122,11 @@ public class GDLOutApp extends Application {
         root.getChildren().add(iv_image_boton_fondo2);
         root.getChildren().add(iv_image_boton_fondo3);
         root.getChildren().add(iv_image_boton_fondo4);
-        
+        root.getChildren().add(iv_image_cat_gratis);
+        root.getChildren().add(iv_image_cat_s);
+        root.getChildren().add(iv_image_cat_ss);
+        root.getChildren().add(iv_image_cat_sss);
+
 
         Scene scene = new Scene(root, 1200, 750);
         //scene.getStylesheets().add("src/style.css");
